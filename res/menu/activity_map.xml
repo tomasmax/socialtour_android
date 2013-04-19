@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/search_button"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:checkable="true"
+        android:title="@string/search"
+        android:icon="@drawable/search"/>
+    
+    <item
+        android:id="@+id/right_sliding_button"
+        android:orderInCategory="200"
+        android:showAsAction="always"
+        android:checkable="true"
+        android:title="@string/right_slider"
+        android:icon="@drawable/right_slider"/>
+
+</menu>
