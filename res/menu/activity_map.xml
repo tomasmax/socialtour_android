@@ -15,5 +15,5 @@
         android:checkable="true"
         android:title="@string/right_slider"
         android:icon="@drawable/right_slider"/>
-
+    
 </menu>

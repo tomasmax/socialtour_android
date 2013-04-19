@@ -38,25 +38,25 @@
                 android:id="@+id/toggleButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ToggleButton" />
+                android:background="@drawable/toggle_button_see" />
 
             <ToggleButton
                 android:id="@+id/toggleButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ToggleButton" />
+                android:background="@drawable/toggle_button_todo"/>
 
             <ToggleButton
                 android:id="@+id/toggleButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ToggleButton" />
+                android:background="@drawable/toggle_button_eat"/>
 
             <ToggleButton
                 android:id="@+id/toggleButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ToggleButton" />
+                android:background="@drawable/toggle_button_sleep" />
 
         </TableRow>
 
