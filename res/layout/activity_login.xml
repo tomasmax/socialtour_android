@@ -42,7 +42,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="0.2"
             android:background="@drawable/big_marker"
             android:orientation="vertical"
             android:weightSum="1" >
@@ -50,8 +49,9 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginTop="50dp"
-                android:layout_weight="0.2"
+                android:layout_weight="0.4"
                 android:background="#fff"
                 android:orientation="vertical"
                 android:weightSum="1" >
@@ -60,9 +60,10 @@
                     android:id="@+id/imageView1"
                     android:layout_width="match_parent"
                     android:layout_height="65dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.33"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.40"
                     android:src="@drawable/logo" />
                 
                 <ImageView
@@ -72,13 +73,15 @@
                     android:layout_marginLeft="7dp"
                     android:layout_marginRight="7dp"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="0.1"
                     android:src="@drawable/dotted" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="0.20"
                     android:gravity="center"
                     android:text="Gestiona tu tiempo libre"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -88,7 +91,8 @@
                     android:id="@+id/textView3"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="0.20"
                     android:gravity="center"
                     android:text="Context based leisure manager"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -99,10 +103,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="25dp"
-                android:layout_weight="0.15"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.2"
                 android:orientation="vertical" >
 
                 <EditText
@@ -130,14 +135,17 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_weight="0.15"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.10"
                 android:weightSum="1" >
 
                 <Button
@@ -177,9 +185,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_weight="0.2"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.1"
                 android:orientation="vertical" >
 
                 <TextView
@@ -196,8 +206,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="0.2"
                 android:weightSum="1" >
 
