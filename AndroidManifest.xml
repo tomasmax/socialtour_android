@@ -7,27 +7,30 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="17" />
-
+	
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        android:theme="@style/Theme.Styled" >
         <activity
             android:name="com.example.socialtour.LoginActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateVisible" >
             
         </activity>
+        
         <activity
-            android:name="com.example.socialtour.MapActivity"
+            android:name="com.example.socialtour.SocialTourMapActivity"
             android:label="@string/title_activity_map" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+		<uses-library android:name="com.google.android.maps"/>
     </application>
-
+	
 </manifest>
