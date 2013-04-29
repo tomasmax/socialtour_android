@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/side_navigation_menu_item1"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/side_menu_explorer" >
+    </item>
+    <item
+        android:id="@+id/side_navigation_menu_item2"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/side_menu_recommendations" >
+    </item>
+    <item
+        android:id="@+id/side_navigation_menu_item3"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/side_menu_packages" >
+    </item>    
+       
+    <item
+        android:id="@+id/side_navigation_menu_item4"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/side_menu_to_do_list" >
+    </item>
+    <item
+        android:id="@+id/side_navigation_menu_item5"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/side_menu_profile" >
+    </item>
+
+</menu>

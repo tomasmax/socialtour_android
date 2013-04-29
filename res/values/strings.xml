@@ -11,5 +11,12 @@
     
     <string name="search">Search</string>
     <string name="right_slider">View right slider</string>
+    
+    <string name="side_menu_explorer">Explorer</string>
+    <string name="side_menu_recommendations">Recomendaciones</string>
+    <string name="side_menu_packages">Paquetes</string>
+    <string name="side_menu_to_do_list">Cosas por hacer</string>
+    <string name="side_menu_profile">Perfil</string>
+    
 
 </resources>

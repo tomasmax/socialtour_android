@@ -1,9 +1,13 @@
 package com.example.socialtour;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockMapActivity;
@@ -14,17 +18,24 @@ import com.slidingmenu.lib.SlidingMenu;
 
 public class SocialTourMapActivity extends SherlockMapActivity {
 	
-	public ActionBar actionbar;
-	public SlidingMenu leftSlMenu;
-	public SlidingMenu rightSlMenu;
+	private ActionBar actionbar;
+	private SlidingMenu leftSlMenu;
+	private SlidingMenu rightSlMenu;
+	//private SlideMenu leftSlideMenu;
 	
+	@SuppressLint("ResourceAsColor")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
 		
 		actionbar = getSupportActionBar();
-		actionbar.setIcon(getResources().getDrawable(R.drawable.logo_edit1));
+		actionbar.setIcon(getResources().getDrawable(R.drawable.left_sliding));
+		actionbar.setHomeButtonEnabled(true);
+		actionbar.setLogo(getResources().getDrawable(R.drawable.logo_edit1));
+		actionbar.setDisplayUseLogoEnabled(true);
+		//Drawable b=getResources().getDrawable(R.drawable.logo_edit1);
+		//actionbar.setBackgroundDrawable(b);
 		actionbar.setDisplayShowHomeEnabled(true);
 		
 		
@@ -38,7 +49,7 @@ public class SocialTourMapActivity extends SherlockMapActivity {
 		
 		// configure the left SlidingMenu
 		leftSlMenu = new SlidingMenu(getApplicationContext());
-		leftSlMenu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
+		leftSlMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 		leftSlMenu.setMode(SlidingMenu.LEFT);
 		leftSlMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 		leftSlMenu.setShadowWidth(15);
@@ -46,6 +57,21 @@ public class SocialTourMapActivity extends SherlockMapActivity {
 		leftSlMenu.setBehindOffset(offset);
 		leftSlMenu.setFadeDegree(0.60f);
 		leftSlMenu.setMenu(R.layout.left_sliding_menu);
+		
+		/* libSlideMenu
+		// this is from code. no XML declaration necessary, but you won't get state restored after rotation.
+//		slidemenu = new SlideMenu(this, R.menu.slide, this, 333);
+		// this inflates the menu from XML. open/closed state will be restored after rotation, but you'll have to call init.
+		leftSlideMenu = new SlideMenu(this);
+		leftSlideMenu.setBackgroundColor(R.color.slideMenuBack);
+		leftSlideMenu.init(this, R.menu.left_side_navigation_menu, this, 350);
+		
+		// this can set the menu to initially shown instead of hidden
+//		slidemenu.setAsShown(); 
+		
+		// set optional header image
+		leftSlideMenu.setHeaderImage(getResources().getDrawable(R.drawable.ic_launcher));
+       	*/
 		
 		// configure the right SlidingMenu
 		rightSlMenu = new SlidingMenu(getApplicationContext());
@@ -56,7 +82,79 @@ public class SocialTourMapActivity extends SherlockMapActivity {
 		rightSlMenu.setShadowDrawable(R.drawable.shadow);
 		rightSlMenu.setBehindOffset(offset);
 		rightSlMenu.setFadeDegree(0.60f);
-		rightSlMenu.setMenu(R.layout.right_sliding_menu);	
+		rightSlMenu.setMenu(R.layout.right_sliding_menu);
+		
+		//Call home activity
+		TextView textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item1);
+		textview.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				leftSlMenu.toggle();
+				
+			}
+		});
+		
+		//Call profile activity
+		textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item2);
+		textview.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				leftSlMenu.toggle();
+				//Call new activity
+				
+				finish();
+				
+			}
+		});
+		
+		//Call packages activity
+		textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item3);
+		textview.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				leftSlMenu.toggle();
+				//Call new activity
+				
+				finish();
+				
+			}
+		});
+		
+		//Call recommendations activity
+		textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item4);
+		textview.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				leftSlMenu.toggle();
+				//Call new activity
+				
+				finish();
+				
+			}
+		});
+		
+		//Call to_do_list activity
+		textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item5);
+		textview.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				leftSlMenu.toggle();
+				//Call new activity
+				
+				finish();
+				
+			}
+		});
 		
 	}
 
@@ -64,7 +162,8 @@ public class SocialTourMapActivity extends SherlockMapActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getSupportMenuInflater().inflate(R.menu.activity_map, menu);
-		return true;
+		
+        return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
@@ -72,7 +171,6 @@ public class SocialTourMapActivity extends SherlockMapActivity {
 		// TODO Auto-generated method stub
 		if (item.getItemId() == android.R.id.home){
 			leftSlMenu.toggle();
-			return true;
 		}
 		else if (item.getItemId() == R.id.right_sliding_button) {
 			rightSlMenu.toggle();
@@ -80,12 +178,39 @@ public class SocialTourMapActivity extends SherlockMapActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	/*
+	@Override
+	public void onSlideMenuItemClick(int itemId) {
 
+		switch(itemId) {
+		case R.id.side_navigation_menu_item1: //explorar
+			Toast.makeText(this, "Item one selected", Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.side_navigation_menu_item2: //recomendaciones
+			Toast.makeText(this, "Item two selected", Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.side_navigation_menu_item3: //paquetes
+			Toast.makeText(this, "Item three selected", Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.side_navigation_menu_item4: //listas
+			Toast.makeText(this, "Item four selected", Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.side_navigation_menu_item5: //perfil
+			Toast.makeText(this, "Item five selected", Toast.LENGTH_SHORT).show();
+			break;
+		}
+		
+	}
+	*/
+	
 	@Override
 	protected boolean isRouteDisplayed() {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
 	
 	
 
