@@ -17,7 +17,7 @@
             android:id="@+id/mapview"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:apiKey="My google Map ID"
+            android:apiKey="AIzaSyDpQyPKnWwpJLOZJCzZocuO9RoetHBk70Q"
             android:clickable="true" />
     </LinearLayout>
 

@@ -108,12 +108,14 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_weight="0.2"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:weightSum="1" >
 
                 <EditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
                     android:ems="10"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
@@ -127,6 +129,7 @@
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
                     android:ems="10"
                     android:hint="@string/prompt_password"
                     android:imeActionId="@+id/login"
@@ -214,7 +217,7 @@
                 android:weightSum="1" >
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/facebookLoginButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
@@ -224,7 +227,7 @@
                     android:src="@drawable/facebook_logo" />
 
                 <ImageButton
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/foursquareLoginButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
@@ -235,7 +238,7 @@
                     android:src="@drawable/foursquare_logo" />
 
                 <ImageButton
-                    android:id="@+id/imageButton1"
+                    android:id="@+id/twitterLoginButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
@@ -246,13 +249,13 @@
                     android:src="@drawable/twitter_logo" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/googleLoginButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
                     android:layout_weight="0.25"
                     android:background="@drawable/round_button"
-                    android:paddingBottom="15dp"
+                    android:paddingBottom="18dp"
                     android:paddingTop="18dp"
                     android:src="@drawable/google_logo" />
 

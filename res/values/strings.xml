@@ -8,15 +8,14 @@
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
-    
     <string name="search">Search</string>
     <string name="right_slider">View right slider</string>
-    
     <string name="side_menu_explorer">Explorer</string>
     <string name="side_menu_recommendations">Recomendaciones</string>
     <string name="side_menu_packages">Paquetes</string>
     <string name="side_menu_to_do_list">Cosas por hacer</string>
     <string name="side_menu_profile">Perfil</string>
-    
+    <string name="title_activity_social_tour_user_profile">SocialTourUserProfile</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
