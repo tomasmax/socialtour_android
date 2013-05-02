@@ -17,5 +17,6 @@
     <string name="side_menu_profile">Perfil</string>
     <string name="title_activity_social_tour_user_profile">SocialTourUserProfile</string>
     <string name="action_settings">Settings</string>
+    <string name="title_map_fragment">MapFragment</string>
 
 </resources>

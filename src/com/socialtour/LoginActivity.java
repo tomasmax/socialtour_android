@@ -93,7 +93,7 @@ public class LoginActivity extends Activity {
             public void onClick(View view) {
                 attemptLogin();
                 //Call new activity
-                Intent intent = new Intent(LoginActivity.this, SocialTourMapActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SocialTourFragmentContainer.class);
                 startActivity(intent);      
 				finish();
             }

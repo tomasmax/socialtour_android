@@ -13,6 +13,17 @@
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="com.socialtour.permission.MAPS_RECEIVE"/>
+	
+	<uses-feature
+        android:glEsVersion="0x00020000"
+
+        android:required="true" />
+
+    <permission
+      android:name="com.socialtour.permission.MAPS_RECEIVE"
+
+      android:protectionLevel="signature"/>
 
     <application
         android:allowBackup="true"
@@ -34,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.socialtour.SocialTourMapActivity"
+            android:name="com.socialtour.SocialTourFragmentContainer"
             android:label="@string/title_activity_map" >
         </activity>
 
@@ -42,6 +53,11 @@
             android:name="com.socialtour.SocialTourUserProfile"
             android:label="@string/title_activity_social_tour_user_profile" >
         </activity>
+        
+         <meta-data 
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDpQyPKnWwpJLOZJCzZocuO9RoetHBk70Q" />
+        
     </application>
 
 </manifest>
