@@ -24,6 +24,7 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 	private ActionBar actionbar;
 	private SlidingMenu leftSlMenu;
 	private SlidingMenu rightSlMenu;
+	private FragmentTransaction ft;
 	
 	//private SlideMenu leftSlideMenu;
 	
@@ -99,7 +100,7 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
             MapFragment firstFrag = new MapFragment();
 
             // add fragment to the fragment container layout
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFrag);
+            ft = getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFrag);
             ft.commit();
         }
 		
@@ -110,8 +111,7 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				leftSlMenu.toggle();
-				
+				leftSlMenu.toggle();	
 			}
 		});
 		
@@ -123,9 +123,10 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				leftSlMenu.toggle();
-				//Call new activity
-				
-				finish();
+				//Call new fragment
+				UserProfileFragment upf = new UserProfileFragment();
+	            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, upf);
+	            ft.commit();
 				
 			}
 		});

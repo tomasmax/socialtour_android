@@ -48,44 +48,48 @@ public class MapFragment extends SherlockFragment {
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
-		
+		// TODO Auto-generated method stub
+		super.onActivityCreated(savedInstanceState);
+		/*
 		// Obtiene referencia al LocationManager
 
-		locManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
+				locManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
 
-		// Obtiene la ultima posicion conocida
+				// Obtiene la ultima posicion conocida
 
-		//Location loc = locManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+				//Location loc = locManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
-		    //Nos registramos para recibir actualizaciones de la posicion
+				    //Nos registramos para recibir actualizaciones de la posicion
 
-		    locListener = new LocationListener() {
+				    locListener = new LocationListener() {
 
-		    public void onLocationChanged(Location location) {
+				    public void onLocationChanged(Location location) {
 
-		    userLat = location.getLatitude();
+				    userLat = location.getLatitude();
 
-		    userLong = location.getLongitude();
+				    userLong = location.getLongitude();
 
-		    CameraUpdate camUpdate = CameraUpdateFactory.newLatLng(new LatLng(userLat, userLong));
+				    CameraUpdate camUpdate = CameraUpdateFactory.newLatLng(new LatLng(userLat, userLong));
 
-		    map.moveCamera(camUpdate);
-		   
+				    map.moveCamera(camUpdate);
+				   
 
-				Log.i("", String.valueOf(location.getLatitude() + " - " + String.valueOf(location.getLongitude())));
+						Log.i("", String.valueOf(location.getLatitude() + " - " + String.valueOf(location.getLongitude())));
 
-		    }
+				    }
 
-		    public void onProviderDisabled(String provider){}
+				    public void onProviderDisabled(String provider){}
 
-		    public void onProviderEnabled(String provider){}
+				    public void onProviderEnabled(String provider){}
 
-		    public void onStatusChanged(String provider, int status, Bundle extras){}
+				    public void onStatusChanged(String provider, int status, Bundle extras){}
 
-		    }; 
+				    }; 
 
-		locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locListener);
+				locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locListener);
 
-		locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locListener);
+				locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locListener);
+		*/
+		
 	}
 }
