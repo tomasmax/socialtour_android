@@ -57,7 +57,7 @@
                 android:weightSum="1" >
 
                 <ImageView
-                    android:id="@+id/imageView1"
+                    android:id="@+id/imageViewProfile"
                     android:layout_width="match_parent"
                     android:layout_height="65dp"
                     android:layout_gravity="center"

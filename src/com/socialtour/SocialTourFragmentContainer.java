@@ -27,7 +27,6 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 	
 	//private SlideMenu leftSlideMenu;
 	
-	@SuppressLint("ResourceAsColor")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -1,18 +1,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#494949" >
+    android:background="#494949"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#cf0818"
+        android:text="@string/recommended_activities"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#fff" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="226dp"
+        android:layout_height="54dp" />
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="471dp" >
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/listView1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-        </LinearLayout>
+            android:layout_height="match_parent" >
+        </ListView>
+
     </ScrollView>
 
 </LinearLayout>
