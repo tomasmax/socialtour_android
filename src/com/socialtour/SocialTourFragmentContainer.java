@@ -100,7 +100,7 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
             MapFragment firstFrag = new MapFragment();
 
             // add fragment to the fragment container layout
-            ft = getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFrag);
+            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, firstFrag);
             ft.commit();
         }
 		
@@ -111,7 +111,12 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				leftSlMenu.toggle();	
+				leftSlMenu.toggle();
+				//Call new fragment
+				MapFragment mapFrag = new MapFragment();
+	            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mapFrag);
+	            ft.addToBackStack(null);
+	            ft.commit();
 			}
 		});
 		

@@ -19,5 +19,27 @@
     <string name="action_settings">Settings</string>
     <string name="title_map_fragment">MapFragment</string>
     <string name="recommended_activities">Actividades Recomendadas</string>
+    
+    <string name="layout_most_rated">Rutas</string>
+    <string name="layout_specials">Destacados</string>
+    <string name="layout_rating">Puntuación:</string>
+    <string name="layout_rate">Puntuar sitio</string>
+	<string name="layout_upload_photo">Subir foto</string>   
+	<string name="layout_goto_maps">Ver en Google Maps</string>
+	<string name="layout_images">Imágenes</string>
+	<string name="layout_map">Mapa</string>
+	<string name="layout_comments">Comentarios</string>
+	<string name="layout_upload_comment">Añadir comentario</string>
+	<string name="layout_create">Crear</string>
+	<string name="layout_filter">Filtrar</string>
+	<string name="layout_create_event">Nuevo evento</string>
+	<string name="layout_create_poi">Nuevo sitio</string>
+	<string name="layout_select">Seleccionar</string>
+	<string name="layout_goto_poi">Pulsar para ver descripción.</string>
+	<string name="layout_extend_view">Ver más</string>
+	<string name="layout_show_video">Ver vídeo</string>
+	<string name="layout_language">eu</string>
+	<string name="layout_qr">Código QR</string>
+	<string name="layout_language_string">Euskera</string> 
 
 </resources>
