@@ -2,13 +2,17 @@ package com.socialtour;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -25,6 +29,9 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 	private SlidingMenu leftSlMenu;
 	private SlidingMenu rightSlMenu;
 	private FragmentTransaction ft;
+	
+	private MapFragment mapFrag = new MapFragment();
+	private UserProfileFragment userProfilepFrag = new UserProfileFragment();
 	
 	//private SlideMenu leftSlideMenu;
 	
@@ -96,15 +103,31 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
             if(savedInstanceState != null)
                 return;
 
-            // Create an instance of mapFragment
-            MapFragment firstFrag = new MapFragment();
 
             // add fragment to the fragment container layout
-            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, firstFrag);
+            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mapFrag);
             ft.commit();
         }
+        
+        // Fill ListView
+        ListView poisListView = (ListView) rightSlMenu.findViewById(R.id.rightListView);
+        
+        //POIListAdapter adapter = new POIListAdapter(this, R.layout.poi_list_row_layout, ZallaturActivity.poiArrayList);
+        //poisListView.setAdapter(adapter);
+        
+        poisListView.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+				leftSlMenu.toggle();
+				//Call new fragment
+				PoiFragment poiFrag = new PoiFragment();
+	            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,poiFrag);
+	            ft.addToBackStack(null);
+	            ft.commit();
+				//startPoiFragment(position);				
+			}
+		});
 		
-		//Call home activity
+		//Call home fragment
 		TextView textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item1);
 		textview.setOnClickListener(new OnClickListener() {
 			
@@ -113,14 +136,14 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 				// TODO Auto-generated method stub
 				leftSlMenu.toggle();
 				//Call new fragment
-				MapFragment mapFrag = new MapFragment();
+				
 	            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mapFrag);
 	            ft.addToBackStack(null);
 	            ft.commit();
 			}
 		});
 		
-		//Call profile activity
+		//Call profile fragment
 		textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item2);
 		textview.setOnClickListener(new OnClickListener() {
 			
@@ -129,14 +152,15 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 				// TODO Auto-generated method stub
 				leftSlMenu.toggle();
 				//Call new fragment
-				UserProfileFragment upf = new UserProfileFragment();
-	            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, upf);
+				
+	            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, userProfilepFrag);
+	            ft.addToBackStack(null);
 	            ft.commit();
 				
 			}
 		});
 		
-		//Call packages activity
+		//Call packages fragment
 		textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item3);
 		textview.setOnClickListener(new OnClickListener() {
 			
@@ -151,7 +175,7 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 			}
 		});
 		
-		//Call recommendations activity
+		//Call recommendations fragment
 		textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item4);
 		textview.setOnClickListener(new OnClickListener() {
 			
@@ -166,7 +190,7 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 			}
 		});
 		
-		//Call to_do_list activity
+		//Call to_do_list fragment
 		textview = (TextView)leftSlMenu.findViewById(R.id.side_navigation_menu_item5);
 		textview.setOnClickListener(new OnClickListener() {
 			
@@ -202,6 +226,24 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	private void startPoiFragment(int position) {
+		/*if(filteredPOIs!=null) {
+			int index = filteredPOIs.get(position).getId();
+			
+			for(int i=0; i<ZallaturActivity.poiArrayList.size(); i++)
+				if(index == ZallaturActivity.poiArrayList.get(i).getId()) {
+					position = i;
+					break;
+				}
+		}
+		
+		Bundle b = new Bundle();
+		b.putInt("position", position);
+		Intent i = new Intent(this, ZallaPOIActivity.class);
+		i.putExtras(b);
+		this.startActivity(i);*/
 	}
 	
 	/*

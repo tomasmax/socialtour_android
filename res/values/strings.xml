@@ -19,6 +19,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_map_fragment">MapFragment</string>
     <string name="recommended_activities">Actividades Recomendadas</string>
+    <string name="category">Categoria:</string>
     
     <string name="layout_most_rated">Rutas</string>
     <string name="layout_specials">Destacados</string>

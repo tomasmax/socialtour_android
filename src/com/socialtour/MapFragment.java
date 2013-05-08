@@ -92,4 +92,12 @@ public class MapFragment extends SherlockFragment {
 		*/
 		
 	}
+	
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        SupportMapFragment f = (SupportMapFragment) getFragmentManager().findFragmentById(R.id.mapFragmentView);
+        if (f != null) 
+            getFragmentManager().beginTransaction().remove(f).commit();
+    }
 }
