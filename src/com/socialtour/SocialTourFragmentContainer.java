@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -105,7 +106,7 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 
 
             // add fragment to the fragment container layout
-            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mapFrag);
+            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mapFrag, "map_fragment");
             ft.commit();
         }
         
@@ -119,11 +120,28 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 			public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 				leftSlMenu.toggle();
 				//Call new fragment
-				PoiFragment poiFrag = new PoiFragment();
-	            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,poiFrag);
-	            ft.addToBackStack(null);
-	            ft.commit();
-				//startPoiFragment(position);				
+				Fragment myFragment = (Fragment)getSupportFragmentManager().findFragmentByTag("poi_fragment");
+				
+				if (myFragment == null) {
+					PoiFragment poiFrag = new PoiFragment();
+					//startPoiFragment(position);
+					ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, poiFrag, "poi_fragment");
+		            ft.addToBackStack(null);
+		            ft.commit();
+				}
+				else {
+					if (myFragment.isVisible()) {
+							
+						}
+					else {
+						PoiFragment poiFrag = new PoiFragment();
+						//startPoiFragment(position);
+			            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,poiFrag, "poi_fragment");
+			            ft.addToBackStack(null);
+			            ft.commit();	
+					}
+					
+				}
 			}
 		});
 		
@@ -136,10 +154,24 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 				// TODO Auto-generated method stub
 				leftSlMenu.toggle();
 				//Call new fragment
+				Fragment myFragment = (Fragment)getSupportFragmentManager().findFragmentByTag("map_fragment");
+				if (myFragment == null) {
+					ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mapFrag, "map_fragment");
+		            ft.addToBackStack(null);
+		            ft.commit();
+				}
+				else {
+					if (myFragment.isVisible()) {
+							
+						}
+					else {
+						ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mapFrag);
+			            ft.addToBackStack(null);
+			            ft.commit();	
+					}
+					
+				}
 				
-	            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mapFrag);
-	            ft.addToBackStack(null);
-	            ft.commit();
 			}
 		});
 		
@@ -152,10 +184,23 @@ public class SocialTourFragmentContainer extends SherlockFragmentActivity {
 				// TODO Auto-generated method stub
 				leftSlMenu.toggle();
 				//Call new fragment
-				
-	            ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, userProfilepFrag);
-	            ft.addToBackStack(null);
-	            ft.commit();
+				Fragment myFragment = (Fragment)getSupportFragmentManager().findFragmentByTag("profile_fragment");
+				if (myFragment == null) {
+					ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, userProfilepFrag, "profile_fragment");
+		            ft.addToBackStack(null);
+		            ft.commit();
+				}
+				else {
+					if (myFragment.isVisible()) {
+							
+						}
+					else {
+						ft = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, userProfilepFrag, "profile_fragment");
+			            ft.addToBackStack(null);
+			            ft.commit();	
+					}
+					
+				}
 				
 			}
 		});
