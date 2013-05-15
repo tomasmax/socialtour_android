@@ -1,7 +1,5 @@
 package com.socialtour;
 
-import com.example.socialtour.R;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -14,10 +12,11 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
-import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.socialtour.R;
 
 /**
  * Activity which displays a login screen to the user, offering registration as

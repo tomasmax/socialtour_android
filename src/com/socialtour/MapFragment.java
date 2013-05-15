@@ -1,24 +1,24 @@
 package com.socialtour;
 
-import com.example.socialtour.R;
 
-import android.content.Context;
-import android.location.Location;
+import java.util.ArrayList;
+
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.app.SherlockMapFragment;
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
+import com.example.socialtour.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
+import com.socialtour.models.Comment;
+import com.socialtour.models.Event;
+import com.socialtour.models.POI;
+import com.socialtour.models.POIType;
+import com.socialtour.models.Photo;
 
 public class MapFragment extends SherlockFragment {
 	private GoogleMap map;
@@ -26,6 +26,12 @@ public class MapFragment extends SherlockFragment {
 	private LocationListener locListener;
 	private double userLat;
 	private double userLong;
+	
+	public static ArrayList<POI> poiArrayList;
+	public static ArrayList<POIType> poiTypeArrayList;
+	public static ArrayList<Comment> poiCommentsList;
+	public static ArrayList<Photo> poiPhotosList;
+	public static ArrayList<Event> poiEventsList;
 	
     @Override
 	public void onCreate(Bundle savedInstanceState) {

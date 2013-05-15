@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="socialtour_api_json">http://montesdehierro.com/pois.json</string>
+    <string name="socialtour_api_comments">http://montesdehierro.com/comments.json?api_key=81c2MKQ9bl10y6h5158T43hq&amp;limit=5000</string>
+    <string name="socialtour_api_ratings">http://montesdehierro.com/ratings.json</string>
+    <string name="socialtour_api_events">http://montesdehierro.com/events.json?api_key=81c2MKQ9bl10y6h5158T43hq&amp;limit=5000</string>
+    <string name="socialtour_api_photos">http://montesdehierro.com/photos.json?api_key=81c2MKQ9bl10y6h5158T43hq&amp;limit=5000</string>
+    <string name="socialtour_url">http://montesdehierro.com</string>
+    
     <string name="app_name">SocialTour</string>
     <string name="title_activity_map">MapActivity</string>
     <string name="menu_settings">Settings</string>
@@ -42,5 +49,7 @@
 	<string name="layout_language">eu</string>
 	<string name="layout_qr">Código QR</string>
 	<string name="layout_language_string">Euskera</string> 
+	
+	<string name="no_info">La información no está disponible</string>
 
 </resources>
